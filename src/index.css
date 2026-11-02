@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+@theme {
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-pixel-sub: 'Silkscreen', monospace;
+  --font-kawaii: 'Fredoka', cursive, sans-serif;
+  --font-body: 'Quicksand', sans-serif;
+}
+
+:root {
+  --color-romantic-deep: #4a2840;
+  --color-romantic-pink: #f472b6;
+  --color-romantic-peach: #fbcfe8;
+  --color-romantic-lavender: #e9d5ff;
+  --color-romantic-cream: #fffbf0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: 'Fredoka', 'Quicksand', sans-serif;
+  background-color: #fdf2f8;
+  color: #4a2840;
+  overflow-x: hidden;
+}
+
+/* Pixel art rendering crispness */
+.pixel-art {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Retro Pixel Border Box Styles */
+.pixel-box {
+  border: 3px solid #3b1d32;
+  box-shadow: 4px 4px 0px #3b1d32;
+  transition: all 0.15s ease;
+}
+
+.pixel-box-sm {
+  border: 2px solid #3b1d32;
+  box-shadow: 2px 2px 0px #3b1d32;
+}
+
+.pixel-box-pink {
+  border: 3px solid #ec4899;
+  box-shadow: 4px 4px 0px #be185d;
+}
+
+.pixel-box-soft {
+  border: 3px solid #6b3353;
+  box-shadow: 4px 4px 0px rgba(74, 40, 64, 0.4);
+}
+
+/* Pixel Button 3D Press Effect */
+.pixel-btn-action {
+  border: 3px solid #3b1d32;
+  box-shadow: 0 5px 0 #3b1d32;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.pixel-btn-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #3b1d32;
+}
+
+.pixel-btn-action:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #3b1d32;
+}
+
+/* Kawaii Rounded Glass Panel */
+.kawaii-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(244, 114, 182, 0.35);
+  box-shadow: 0 12px 30px -10px rgba(244, 114, 182, 0.25),
+              inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  border-radius: 1.5rem;
+}
+
+/* Scanlines overlay effect for subtle nostalgic retro touch */
+.scanlines {
+  background: linear-gradient(
+    rgba(255, 255, 255, 0) 50%,
+    rgba(244, 114, 182, 0.04) 50%
+  );
+  background-size: 100% 4px;
+}
+
+/* Custom Animations */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.8) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-120px) scale(1.1) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+@keyframes petalSway {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(25px, 60px) rotate(180deg);
+  }
+  100% {
+    transform: translate(-15px, 120px) rotate(360deg);
+  }
+}
+
+@keyframes idleBob {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes tailWagFast {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(18deg);
+  }
+  75% {
+    transform: rotate(-18deg);
+  }
+}
+
+@keyframes blinkEyes {
+  0%, 94%, 98%, 100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.1);
+  }
+}
+
+.animate-idle-bob {
+  animation: idleBob 2.4s ease-in-out infinite;
+}
+
+.animate-idle-bob-delayed {
+  animation: idleBob 2.4s ease-in-out infinite 0.6s;
+}
+
+.animate-tail-wag {
+  transform-origin: bottom center;
+  animation: tailWagFast 0.8s ease-in-out infinite;
+}
+
+.animate-blink {
+  transform-origin: center;
+  animation: blinkEyes 4s infinite;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fdf2f8;
+}
+::-webkit-scrollbar-thumb {
+  background: #f472b6;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ec4899;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

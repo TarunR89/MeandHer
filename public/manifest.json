@@ -1,0 +1,18 @@
+{
+  "short_name": "Our Universe",
+  "name": "Our Little Universe ♡",
+  "description": "A cozy, persistent romantic pixel-art world and love story",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#fdf2f8",
+  "theme_color": "#f472b6",
+  "display": "standalone",
+  "orientation": "portrait"
+}
